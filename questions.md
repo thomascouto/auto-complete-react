@@ -206,5 +206,14 @@ R:
 
 11. How to render an HTML string coming from the server.
 R: Using div with dangerouslySetInnerHTML tag. For ex.:
-<div dangerouslySetInnerHTML={{ __html: my-content }}>
+
+```
+function ListItem({ itemValue }: ListItemProps) {
+  return <div dangerouslySetInnerHTML={{ __html: itemValue }} />;
+}
+
+export default ListItem;
+```
+
+
 This tag starts with 'dangerously' because it should used only when necessary, due to security risks.
